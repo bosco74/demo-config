@@ -16,19 +16,19 @@ greeting: "그냥 서버"
 ---
 
 spring:
-  profile: dev
+  profiles: dev
 greeting: "개발 서버"
 
 ---
 
 spring:
-  profile: stage
+  profiles: stage
 greeting: "스테이징 서버"
 
 ---
 
 spring:
-  profile: local
+  profiles: local
 greeting: "로컬 서버"
 
 
