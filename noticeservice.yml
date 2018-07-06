@@ -12,6 +12,12 @@ eureka:
   instance:
     instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 spring:
+  jpa: 
+    hibernate:
+      ddl-auto: update
+      show_sql: true
+      use_sql_comments: true
+      fotmat_sql: true
   datasource:
     url: jdbc:mysql://mysql-test:3306/notice
     username: bosco74
