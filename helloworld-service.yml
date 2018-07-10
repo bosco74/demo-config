@@ -11,15 +11,15 @@ eureka:
              ${vcap.services.eureka-service.credentials.uri:http://eureka-server:8761}/eureka/
   instance:
     instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
-greeting: "그냥 서버"
-message: Hello World! default!
+greeting: "그냥 서버!"
+message: "Hello World! default!"
 
 ---
 
 spring:
   profiles: dev
 greeting: "개발 서버"
-message: Hello World! dev!
+message: "Hello World! dev!"
 
 
 ---
@@ -27,7 +27,7 @@ message: Hello World! dev!
 spring:
   profiles: stage
 greeting: "스테이징 서버"
-message: Hello World! stage!
+message: "Hello World! stage!"
 
 ---
 
@@ -38,7 +38,7 @@ spring:
 #    url: jdbc:mysql://192.168.2.28:3306/notice
 
 greeting: "로컬 서버"
-message: Hello World! local!
+message: "Hello World! local!"
 eureka:
   client:
         healthcheck:
