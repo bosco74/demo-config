@@ -44,9 +44,6 @@ greeting: "스테이징서버"
 
 spring:
   profiles: local
- 
-#  datasource:
-#    url: jdbc:mysql://192.168.2.28:3306/notice
 
 greeting: "로컬서버"
 eureka:
