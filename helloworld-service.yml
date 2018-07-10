@@ -11,6 +11,8 @@ eureka:
              ${vcap.services.eureka-service.credentials.uri:http://eureka-server:8761}/eureka/
   instance:
     instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    
+   
 spring:
   jpa: 
     hibernate:
