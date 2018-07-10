@@ -1,20 +1,58 @@
 server:
-  port: 8761
+    port: 8763
 
 eureka:
-  instance:
-    hostname: localhost
   client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-  server:
-    waitTimeInMsWhenSyncEmpty: 0
-    ## Set this only for this sample service without which starting the instance will by default wait for the default of 5 mins
+        healthcheck:
+          enabled:  true 
+        fetch-registry: true
+        serviceUrl:
+            defaultZone: 
+             ${vcap.services.eureka-service.credentials.uri:http://eureka-server:8761}/eureka/
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+spring:
+  jpa: 
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      use-sql-comments: true
+  datasource:
+    url: jdbc:mysql://mysql-test:3306/notice
+    username: bosco74
+    password: dkaghsms12!
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      maximum-pool-size: 2
+greeting: "그냥 서버!"
+
+---
+
+spring:
+  profiles: dev
+greeting: "개발서버"
+
+---
+
+spring:
+  profiles: stage
+greeting: "스테이징서버"
 
 ---
 
 spring:
   profiles: local
-greeting: local!
+
+greeting: "로컬서버"
+eureka:
+  client:
+        healthcheck:
+          enabled:  true 
+        fetch-registry: true
+        serviceUrl:
+            defaultZone: 
+             ${vcap.services.eureka-service.credentials.uri:http://192.168.2.28:8761}/eureka/
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
