@@ -25,4 +25,4 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     hikari:
       maximum-pool-size: 2
-greeting: 그냥 서버
+greeting: default server
