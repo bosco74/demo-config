@@ -12,3 +12,9 @@ eureka:
   server:
     waitTimeInMsWhenSyncEmpty: 0
     ## Set this only for this sample service without which starting the instance will by default wait for the default of 5 mins
+
+---
+
+spring:
+  profiles: local
+greeting: local!
