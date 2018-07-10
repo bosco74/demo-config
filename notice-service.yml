@@ -26,26 +26,26 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     hikari:
       maximum-pool-size: 2
-greeting: "±×³É ¼­¹ö"
+greeting: "ê·¸ëƒ¥ì„œë²„"
 
 ---
 
 spring:
   profiles: dev
-greeting: "°³¹ß¼­¹ö"
+greeting: "ê°œë°œì„œë²„"
 
 ---
 
 spring:
   profiles: stage
-greeting: "½ºÅ×ÀÌÂ¡¼­¹ö"
+greeting: "ìŠ¤í…Œì´ì§•ì„œë²„"
 
 ---
 
 spring:
   profiles: local
 
-greeting: "·ÎÄÃ¼­¹ö"
+greeting: "ë¡œì»¬ì„œë²„"
 eureka:
   client:
         healthcheck:
