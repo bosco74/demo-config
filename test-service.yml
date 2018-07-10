@@ -20,3 +20,8 @@ spring:
       use-sql-comments: true
   datasource:
     url: jdbc:mysql://mysql-test:3306/notice
+    username: bosco74
+    password: dkaghsms12!
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      maximum-pool-size: 2
